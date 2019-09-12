@@ -20,8 +20,15 @@ contract Test {
         storageA.m[1] = 2;
         storageB.m[3] = 4;
         storageB.x = 5;
-        storageC.ma.length = 6;
-        storageD.a.length = 7;
+        // storageC.ma.length = 6;
+        // TODO: needs to be changed to
+        //
+        // for (uint i = 0; i < 6; i++)
+        //     storageC.ma.push()
+        //
+        // once that's implemented.
+        for (uint i = 0; i < 7; i++)
+            storageD.a.push(A());
     }
     function run() public returns (uint, uint, uint, uint, uint, uint) {
         A memory memoryA = A();
@@ -45,4 +52,4 @@ contract Test {
     }
 }
 // ----
-// run() -> 2, 42, 42, 6, 999, 7
+// run() -> 2, 42, 42, 0, 999, 7
