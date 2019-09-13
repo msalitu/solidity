@@ -8,6 +8,7 @@ Breaking changes:
  * General: New reserved keywords: ``virtual``.
  * Type checker: Resulting type of exponentiation is equal to the type of the base. Also allow signed types for the base.
  * Command line interface: Switch to the new error reporter by default. ``--old-reporter`` falls back to the deprecated old error reporter.
+ * Syntax: ``push(element)`` for dynamic storage arrays do not return the new length anymore.
 
 
 Language Features:
@@ -15,6 +16,8 @@ Language Features:
  * Allow underscores as delimiters in hex strings.
  * Allow explicit conversions from ``address`` to ``address payable`` via ``payable(...)``.
  * Introduce syntax for array slices and implement them for dynamic calldata arrays.
+ * Introduce ``push()`` for dynamic storage arrays. It returns a reference to the newly allocated element, if applicable.
+ * Modify ``push(element)`` for dynamic storage arrays such that it does not return the new length anymore.
 
 
 Compiler Features:
